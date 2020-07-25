@@ -23,7 +23,7 @@ public class ScriptingEngine {
   public ScriptingEngine() {}
 
   public ScriptingEngine(ScriptingConstructorArgs args) {
-    args.script.ifPresentOrElse(script -> { this.script = script; },
+    args.script.ifPresentOrElse(script -> this.script = script,
             () -> args.path.ifPresent(path -> this.path = path));
     setEngine(args.language);
   }

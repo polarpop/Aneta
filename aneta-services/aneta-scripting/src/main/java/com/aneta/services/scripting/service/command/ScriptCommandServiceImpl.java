@@ -5,12 +5,14 @@ import com.aneta.services.scripting.command.RunScriptCommand;
 import com.aneta.services.scripting.entity.SysScript;
 import com.aneta.services.scripting.model.types.ScriptType;
 import org.axonframework.commandhandling.gateway.CommandGateway;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
+@Service
 public class ScriptCommandServiceImpl implements ScriptCommandService {
 
   private final CommandGateway gateway;

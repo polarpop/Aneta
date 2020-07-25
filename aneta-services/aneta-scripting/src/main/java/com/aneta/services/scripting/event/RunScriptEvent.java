@@ -10,4 +10,8 @@ public class RunScriptEvent extends BaseEvent<UUID> {
     super(script.getId());
     this.script = script;
   }
+
+  public SysScript getScript() {
+    return script;
+  }
 }

@@ -1,5 +1,6 @@
 package com.aneta.services.scripting.aggregate;
 
+import com.aneta.core.scripting.engine.model.ScriptingConstructorArgs;
 import com.aneta.services.scripting.command.RunScriptCommand;
 import com.aneta.services.scripting.command.creation.CreateScriptCommand;
 import com.aneta.services.scripting.entity.SysScript;
@@ -9,6 +10,7 @@ import com.aneta.services.scripting.event.creation.ScriptCreatedEvent;
 import com.aneta.services.scripting.event.exception.RunScriptNotFoundEvent;
 import com.aneta.services.scripting.event.exception.ScriptCreationErrorEvent;
 import com.aneta.services.scripting.repository.ScriptRepository;
+import com.aneta.services.scripting.service.ScriptingEngineService;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.commandhandling.model.AggregateIdentifier;
 import org.axonframework.commandhandling.model.AggregateLifecycle;
@@ -23,13 +25,19 @@ import java.util.UUID;
 @Aggregate
 public class ScriptAggregate {
 
-  @Autowired
-  private ScriptRepository repository;
-
   @AggregateIdentifier
   private UUID id;
 
+  @Autowired
+  private ScriptRepository repository;
+
+  private ScriptingEngineService scriptingEngineService;
+
   public ScriptAggregate() {}
+
+  public ScriptAggregate(ScriptingConstructorArgs args) {
+    this.scriptingEngineService = new ScriptingEngineService(args);
+  }
 
   @CommandHandler
   public ScriptAggregate(CreateScriptCommand createScriptCommand) {
@@ -69,7 +77,11 @@ public class ScriptAggregate {
 
   @EventSourcingHandler
   protected void on(RunScriptEvent evt) {
-
+    try {
+      scriptingEngineService.engine.setScript(evt.getScript().getLabel());
+    } catch (Exception e) {
+      AggregateLifecycle.apply(new RunScriptNotFoundEvent(evt.getId()));
+    }
   }
 
   @EventSourcingHandler
