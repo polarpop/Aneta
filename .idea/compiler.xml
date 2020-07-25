@@ -11,10 +11,12 @@
         <module name="aneta-services" />
         <module name="aneta-commons" />
         <module name="aneta-scripting-service" />
+        <module name="aneta-zuul-server" />
+        <module name="aneta-eureka-server" />
+        <module name="aneta-config-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="aneta-config-server" target="11" />
       <module name="aneta-discovery-server" target="11" />
       <module name="aneta-event" target="8" />
       <module name="aneta-services" target="1.5" />
@@ -25,7 +27,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="aneta-config-server" options="-parameters" />
       <module name="aneta-discovery-server" options="-parameters" />
+      <module name="aneta-eureka-server" options="-parameters" />
       <module name="aneta-scripting-service" options="-parameters" />
+      <module name="aneta-zuul-server" options="-parameters" />
       <module name="scripting" options="-parameters" />
     </option>
   </component>
