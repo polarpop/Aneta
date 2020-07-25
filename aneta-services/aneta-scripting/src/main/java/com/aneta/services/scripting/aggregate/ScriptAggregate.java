@@ -79,6 +79,7 @@ public class ScriptAggregate {
   protected void on(RunScriptEvent evt) {
     try {
       scriptingEngineService.engine.setScript(evt.getScript().getLabel());
+      scriptingEngineService.engine.run();
     } catch (Exception e) {
       AggregateLifecycle.apply(new RunScriptNotFoundEvent(evt.getId()));
     }
