@@ -13,7 +13,6 @@
         <module>aneta-services</module>
         <module>aneta-commons</module>
         <module>aneta-services</module>
-        <module>aneta-core/script-engine</module>
         <module>aneta-services</module>
     </modules>
 

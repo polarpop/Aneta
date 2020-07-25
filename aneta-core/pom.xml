@@ -11,6 +11,8 @@
 
     <groupId>com.aneta</groupId>
     <artifactId>core</artifactId>
-
+    <modules>
+        <module>script-engine</module>
+    </modules>
 
 </project>
