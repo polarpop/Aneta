@@ -6,6 +6,7 @@ import com.aneta.services.scripting.entity.SysScript;
 import com.aneta.services.scripting.event.RunScriptEvent;
 import com.aneta.services.scripting.event.creation.CreateScriptEvent;
 import com.aneta.services.scripting.event.creation.ScriptCreatedEvent;
+import com.aneta.services.scripting.event.exception.RunScriptNotFoundEvent;
 import com.aneta.services.scripting.event.exception.ScriptCreationErrorEvent;
 import com.aneta.services.scripting.repository.ScriptRepository;
 import org.axonframework.commandhandling.CommandHandler;
@@ -62,6 +63,17 @@ public class ScriptAggregate {
   @CommandHandler
   protected void on(RunScriptCommand cmd) {
     Optional<SysScript> script = this.repository.findById(cmd.id);
-    script.ifPresent(sysScript -> AggregateLifecycle.apply(new RunScriptEvent(sysScript)));
+    script.ifPresentOrElse(sysScript -> AggregateLifecycle.apply(new RunScriptEvent(sysScript))
+            , () -> AggregateLifecycle.apply(new RunScriptNotFoundEvent(cmd.id)));
+  }
+
+  @EventSourcingHandler
+  protected void on(RunScriptEvent evt) {
+
+  }
+
+  @EventSourcingHandler
+  protected void on(RunScriptNotFoundEvent evt) {
+
   }
 }
