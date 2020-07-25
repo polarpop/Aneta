@@ -1,7 +1,9 @@
 package com.aneta.services.scripting.aggregate;
 
+import com.aneta.services.scripting.command.RunScriptCommand;
 import com.aneta.services.scripting.command.creation.CreateScriptCommand;
 import com.aneta.services.scripting.entity.SysScript;
+import com.aneta.services.scripting.event.RunScriptEvent;
 import com.aneta.services.scripting.event.creation.CreateScriptEvent;
 import com.aneta.services.scripting.event.creation.ScriptCreatedEvent;
 import com.aneta.services.scripting.event.exception.ScriptCreationErrorEvent;
@@ -14,6 +16,7 @@ import org.axonframework.spring.stereotype.Aggregate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.NonUniqueResultException;
+import java.util.Optional;
 import java.util.UUID;
 
 @Aggregate
@@ -36,7 +39,7 @@ public class ScriptAggregate {
   }
 
   @EventSourcingHandler
-  public void on(CreateScriptEvent created) {
+  protected void on(CreateScriptEvent created) {
     SysScript sysScript = created.getSysScript();
     try {
       this.repository.save(sysScript);
@@ -54,5 +57,11 @@ public class ScriptAggregate {
               e.getMessage()
       ));
     }
+  }
+
+  @CommandHandler
+  protected void on(RunScriptCommand cmd) {
+    Optional<SysScript> script = this.repository.findById(cmd.id);
+    script.ifPresent(sysScript -> AggregateLifecycle.apply(new RunScriptEvent(sysScript)));
   }
 }
