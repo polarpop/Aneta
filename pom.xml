@@ -12,8 +12,6 @@
         <module>aneta-core</module>
         <module>aneta-services</module>
         <module>aneta-commons</module>
-        <module>aneta-services</module>
-        <module>aneta-services</module>
     </modules>
 
 
