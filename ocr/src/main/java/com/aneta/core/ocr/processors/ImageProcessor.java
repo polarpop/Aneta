@@ -1,5 +1,7 @@
 package com.aneta.core.ocr.processors;
 
+import com.aneta.core.ocr.models.Image;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -10,37 +12,23 @@ import java.nio.file.Path;
 import java.util.UUID;
 
 public class ImageProcessor {
-  private File image;
-  private boolean HAS_PROCESSED;
+  private Image image;
 
-  public ImageProcessor() {
-    String tmp = System.getProperty("java.io.tmpdir");
-    String filename = UUID.randomUUID().toString();
-    this.image = new File(tmp + '/' + filename);
+  public ImageProcessor(Image image) {
+    this.image = image;
   }
 
-  public File process(BufferedImage input,
-                                float scale,
-                                float offset,
-                                String outputFileType) throws IOException {
-    BufferedImage output = new BufferedImage(1050, 1024, input.getType());
+  public File process(float scale, float offset, String outputFileType) throws IOException {
+    BufferedImage output = new BufferedImage(1050, 1024, image.getBufferedImage().getType());
     Graphics2D graphic = output.createGraphics();
-    graphic.drawImage(input, 0, 0, 1050, 1024, null);
+    graphic.drawImage(image.getBufferedImage(), 0, 0, 1050, 1024, null);
     graphic.dispose();;
 
     RescaleOp rescale = new RescaleOp(scale, offset, null);
 
     BufferedImage file = rescale.filter(output, null);
 
-    ImageIO.write(file, outputFileType, image);
-    HAS_PROCESSED = true;
-    return image;
-  }
-
-  public void dispose() {
-    if (image.isFile() && image.canWrite()) {
-      image.delete();
-      HAS_PROCESSED = false;
-    }
+    ImageIO.write(file, outputFileType, image.getFile());
+    return image.getFile();
   }
 }
