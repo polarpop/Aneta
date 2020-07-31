@@ -1,8 +1,0 @@
-axon:
-  ampq:
-    exchange: "${AMQP_EXCHANGE_NAME:AnetaExchange}"
-    transaction-mode: transactional
-  eventhandling:
-    processors:
-      name:
-        source: "${AMQP_SOURCE_NAME:AnetaSource}"

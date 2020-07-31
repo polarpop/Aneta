@@ -7,7 +7,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/aneta-services/aneta-config-server/pom.xml" />
         <option value="$PROJECT_DIR$/aneta-services/aneta-discovery-server/pom.xml" />
-        <option value="$PROJECT_DIR$/aneta-services/aneta-scripting/pom.xml" />
         <option value="$PROJECT_DIR$/aneta-services/aneta-eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/aneta-services/aneta-zuul-server/pom.xml" />
       </list>
@@ -15,6 +14,10 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/aneta-commons/aneta-event/pom.xml" />
+        <option value="$PROJECT_DIR$/aneta-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/aneta-core/pom.xml" />
+        <option value="$PROJECT_DIR$/aneta-core/script-engine/pom.xml" />
+        <option value="$PROJECT_DIR$/aneta-core/scripting/pom.xml" />
         <option value="$PROJECT_DIR$/aneta-services/pom.xml" />
       </set>
     </option>
