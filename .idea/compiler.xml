@@ -7,23 +7,26 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="core" />
+        <module name="extensions" />
         <module name="aneta-commons" />
-        <module name="aneta-gateway" />
-        <module name="aneta-eureka-server" />
-        <module name="aneta-services" />
-        <module name="aneta-config-server" />
+        <module name="services" />
         <module name="aneta-zuul-server" />
         <module name="commons" />
+        <module name="authentication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="aneta-config-server" target="11" />
       <module name="aneta-core" target="1.5" />
       <module name="aneta-discovery-server" target="11" />
+      <module name="aneta-eureka-server" target="11" />
       <module name="aneta-event" target="8" />
+      <module name="aneta-gateway" target="11" />
       <module name="aneta-scripting-service" target="11" />
       <module name="aneta-services" target="1.5" />
       <module name="script-engine" target="9" />
       <module name="scripting" target="1.5" />
+      <module name="services" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -34,6 +37,8 @@
       <module name="aneta-gateway" options="-parameters" />
       <module name="aneta-scripting-service" options="-parameters" />
       <module name="aneta-zuul-server" options="-parameters" />
+      <module name="authentication" options="-parameters" />
+      <module name="extensions" options="-parameters" />
       <module name="scripting" options="" />
     </option>
   </component>
