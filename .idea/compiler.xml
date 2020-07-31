@@ -13,6 +13,7 @@
         <module name="aneta-zuul-server" />
         <module name="commons" />
         <module name="authentication" />
+        <module name="ocr" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

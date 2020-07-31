@@ -12,6 +12,7 @@
         <module>core</module>
         <module>commons</module>
         <module>services</module>
+        <module>ocr</module>
     </modules>
 
 
