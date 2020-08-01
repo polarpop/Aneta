@@ -3,7 +3,7 @@ package com.aneta.commons.utils;
 
 import com.amazonaws.services.cloudfront.CloudFrontUrlSigner;
 import com.amazonaws.services.cloudfront.util.SignerUtils.Protocol;
-import com.aneta.commons.models.SignedCookie;
+import com.aneta.commons.models.aws.SignedCookie;
 
 import java.io.*;
 import java.security.spec.InvalidKeySpecException;

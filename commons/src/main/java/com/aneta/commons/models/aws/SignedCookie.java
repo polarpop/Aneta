@@ -1,4 +1,4 @@
-package com.aneta.commons.models;
+package com.aneta.commons.models.aws;
 
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.util.Base64;
