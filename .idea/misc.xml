@@ -21,6 +21,7 @@
         <option value="$PROJECT_DIR$/aneta-core/script-engine/pom.xml" />
         <option value="$PROJECT_DIR$/aneta-core/scripting/pom.xml" />
         <option value="$PROJECT_DIR$/aneta-services/pom.xml" />
+        <option value="$PROJECT_DIR$/core/pom.xml" />
         <option value="$PROJECT_DIR$/services/pom.xml" />
       </set>
     </option>

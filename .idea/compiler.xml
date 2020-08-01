@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="core" />
+        <module name="scripting" />
         <module name="extensions" />
         <module name="aneta-commons" />
         <module name="services" />
@@ -14,6 +14,7 @@
         <module name="commons" />
         <module name="authentication" />
         <module name="ocr" />
+        <module name="ml" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,8 +26,8 @@
       <module name="aneta-gateway" target="11" />
       <module name="aneta-scripting-service" target="11" />
       <module name="aneta-services" target="1.5" />
+      <module name="core" target="8" />
       <module name="script-engine" target="9" />
-      <module name="scripting" target="1.5" />
       <module name="services" target="1.5" />
     </bytecodeTargetLevel>
   </component>
