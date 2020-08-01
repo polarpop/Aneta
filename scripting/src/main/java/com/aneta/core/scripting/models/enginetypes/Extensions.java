@@ -1,4 +1,4 @@
-package com.aneta.core.models.scripting.enginetypes;
+package com.aneta.core.scripting.models.enginetypes;
 
 public enum Extensions {
   JAVASCRIPT("js"),

@@ -13,6 +13,8 @@
         <module>commons</module>
         <module>services</module>
         <module>ocr</module>
+        <module>scripting</module>
+        <module>ml</module>
     </modules>
 
 

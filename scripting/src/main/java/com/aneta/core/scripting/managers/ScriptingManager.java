@@ -1,4 +1,4 @@
-package com.aneta.core.managers;
+package com.aneta.core.scripting.managers;
 
 import javax.script.ScriptEngineManager;
 
