@@ -29,7 +29,7 @@ public class AzureBlobStorageProvider {
   }
 
   public BlobServiceClient create() throws RuntimeException {
-    if (endpoint != "" && sasToken != "") {
+    if (!(endpoint.equals("")) && !(sasToken.equals(""))) {
       return new BlobServiceClientBuilder()
               .sasToken(sasToken)
               .endpoint(endpoint)
