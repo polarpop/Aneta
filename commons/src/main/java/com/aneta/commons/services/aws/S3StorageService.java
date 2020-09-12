@@ -18,12 +18,12 @@ import java.util.Date;
 import java.util.List;
 
 
-public class AnetaS3StorageServiceImpl implements AnetaS3StorageService {
+public class S3StorageService {
   private S3StorageProvider provider;
 
-  public AnetaS3StorageServiceImpl() {}
+  public S3StorageService() {}
 
-  public AnetaS3StorageServiceImpl(S3StorageProvider provider) {
+  public S3StorageService(S3StorageProvider provider) {
     this.provider = provider;
   }
 

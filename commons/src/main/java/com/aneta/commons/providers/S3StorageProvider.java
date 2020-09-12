@@ -21,7 +21,7 @@ public class S3StorageProvider {
     return this;
   }
 
-  public S3StorageProvider setClient(Regions region) {
+  public S3StorageProvider create(Regions region) {
     if (credentials != null) {
       this.client = AmazonS3ClientBuilder.standard()
               .withCredentials((AWSCredentialsProvider) credentials)
