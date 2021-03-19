@@ -28,7 +28,7 @@
         <aws.cloudfront.version>1.11.974</aws.cloudfront.version>
         <azure.storage.queue.version>12.8.0</azure.storage.queue.version>
         <azure.storage.file-share.version>12.8.0</azure.storage.file-share.version>
-        <azure.storage.blob.version>12.10.0</azure.storage.blob.version>
+        <azure.storage.blob.version>12.10.1</azure.storage.blob.version>
     </properties>
 
     <dependencies>
