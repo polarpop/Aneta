@@ -24,8 +24,8 @@
     </build>
 
     <properties>
-        <aws.s3.version>1.11.986</aws.s3.version>
-        <aws.cloudfront.version>1.11.986</aws.cloudfront.version>
+        <aws.s3.version>1.11.1000</aws.s3.version>
+        <aws.cloudfront.version>1.11.1000</aws.cloudfront.version>
         <azure.storage.queue.version>12.8.0</azure.storage.queue.version>
         <azure.storage.file-share.version>12.8.0</azure.storage.file-share.version>
         <azure.storage.blob.version>12.10.2</azure.storage.blob.version>
